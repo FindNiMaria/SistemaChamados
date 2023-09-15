@@ -30,6 +30,21 @@ namespace SistemaChamados
         private void btnlogin_Click(object sender, EventArgs e)
         {
 
+            this.Hide(); 
+            TelaInicial Inicio = new TelaInicial();
+            Inicio.ShowDialog();
+            
+
+        }
+
+        private void txblogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
