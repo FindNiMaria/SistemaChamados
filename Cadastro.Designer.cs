@@ -28,124 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblNomeFunc = new System.Windows.Forms.Label();
+            this.txbNomeFunc = new System.Windows.Forms.TextBox();
+            this.txbLoginFunc = new System.Windows.Forms.TextBox();
+            this.lbLoginFunc = new System.Windows.Forms.Label();
+            this.txbTelFunc = new System.Windows.Forms.TextBox();
+            this.lblTelefoneFunc = new System.Windows.Forms.Label();
+            this.txbEmailFunc = new System.Windows.Forms.TextBox();
+            this.lblEmailFunc = new System.Windows.Forms.Label();
+            this.txbSenhaFunc = new System.Windows.Forms.TextBox();
+            this.lblSenhaFunc = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnSairFunc = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNomeFunc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lblNomeFunc.AutoSize = true;
+            this.lblNomeFunc.Location = new System.Drawing.Point(68, 36);
+            this.lblNomeFunc.Name = "lblNomeFunc";
+            this.lblNomeFunc.Size = new System.Drawing.Size(38, 13);
+            this.lblNomeFunc.TabIndex = 0;
+            this.lblNomeFunc.Text = "Nome ";
             // 
-            // textBox1
+            // txbNomeFunc
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txbNomeFunc.Location = new System.Drawing.Point(71, 52);
+            this.txbNomeFunc.Name = "txbNomeFunc";
+            this.txbNomeFunc.Size = new System.Drawing.Size(100, 20);
+            this.txbNomeFunc.TabIndex = 1;
             // 
-            // textBox2
+            // txbLoginFunc
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txbLoginFunc.Location = new System.Drawing.Point(190, 52);
+            this.txbLoginFunc.Name = "txbLoginFunc";
+            this.txbLoginFunc.Size = new System.Drawing.Size(100, 20);
+            this.txbLoginFunc.TabIndex = 3;
             // 
-            // label2
+            // lbLoginFunc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.lbLoginFunc.AutoSize = true;
+            this.lbLoginFunc.Location = new System.Drawing.Point(187, 36);
+            this.lbLoginFunc.Name = "lbLoginFunc";
+            this.lbLoginFunc.Size = new System.Drawing.Size(33, 13);
+            this.lbLoginFunc.TabIndex = 2;
+            this.lbLoginFunc.Text = "Login";
             // 
-            // textBox3
+            // txbTelFunc
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 109);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txbTelFunc.Location = new System.Drawing.Point(71, 109);
+            this.txbTelFunc.Name = "txbTelFunc";
+            this.txbTelFunc.Size = new System.Drawing.Size(100, 20);
+            this.txbTelFunc.TabIndex = 5;
             // 
-            // label3
+            // lblTelefoneFunc
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.lblTelefoneFunc.AutoSize = true;
+            this.lblTelefoneFunc.Location = new System.Drawing.Point(68, 93);
+            this.lblTelefoneFunc.Name = "lblTelefoneFunc";
+            this.lblTelefoneFunc.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefoneFunc.TabIndex = 4;
+            this.lblTelefoneFunc.Text = "Telefone";
             // 
-            // textBox4
+            // txbEmailFunc
             // 
-            this.textBox4.Location = new System.Drawing.Point(190, 109);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txbEmailFunc.Location = new System.Drawing.Point(190, 109);
+            this.txbEmailFunc.Name = "txbEmailFunc";
+            this.txbEmailFunc.Size = new System.Drawing.Size(100, 20);
+            this.txbEmailFunc.TabIndex = 7;
             // 
-            // label4
+            // lblEmailFunc
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.lblEmailFunc.AutoSize = true;
+            this.lblEmailFunc.Location = new System.Drawing.Point(187, 93);
+            this.lblEmailFunc.Name = "lblEmailFunc";
+            this.lblEmailFunc.Size = new System.Drawing.Size(35, 13);
+            this.lblEmailFunc.TabIndex = 6;
+            this.lblEmailFunc.Text = "E-mail";
             // 
-            // textBox5
+            // txbSenhaFunc
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 163);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.txbSenhaFunc.Location = new System.Drawing.Point(71, 163);
+            this.txbSenhaFunc.Name = "txbSenhaFunc";
+            this.txbSenhaFunc.Size = new System.Drawing.Size(100, 20);
+            this.txbSenhaFunc.TabIndex = 9;
             // 
-            // label5
+            // lblSenhaFunc
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 147);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
+            this.lblSenhaFunc.AutoSize = true;
+            this.lblSenhaFunc.Location = new System.Drawing.Point(68, 147);
+            this.lblSenhaFunc.Name = "lblSenhaFunc";
+            this.lblSenhaFunc.Size = new System.Drawing.Size(38, 13);
+            this.lblSenhaFunc.TabIndex = 8;
+            this.lblSenhaFunc.Text = "Senha";
             // 
-            // button1
+            // btnCadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(204, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 25);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Location = new System.Drawing.Point(204, 210);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(86, 25);
+            this.btnCadastrar.TabIndex = 10;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // btnSairFunc
+            // 
+            this.btnSairFunc.Location = new System.Drawing.Point(85, 210);
+            this.btnSairFunc.Name = "btnSairFunc";
+            this.btnSairFunc.Size = new System.Drawing.Size(86, 25);
+            this.btnSairFunc.TabIndex = 11;
+            this.btnSairFunc.Text = "Sair";
+            this.btnSairFunc.UseVisualStyleBackColor = true;
+            this.btnSairFunc.Click += new System.EventHandler(this.btnSairFunc_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 270);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(591, 220);
+            this.listView1.TabIndex = 13;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 554);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(627, 516);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnSairFunc);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.txbSenhaFunc);
+            this.Controls.Add(this.lblSenhaFunc);
+            this.Controls.Add(this.txbEmailFunc);
+            this.Controls.Add(this.lblEmailFunc);
+            this.Controls.Add(this.txbTelFunc);
+            this.Controls.Add(this.lblTelefoneFunc);
+            this.Controls.Add(this.txbLoginFunc);
+            this.Controls.Add(this.lbLoginFunc);
+            this.Controls.Add(this.txbNomeFunc);
+            this.Controls.Add(this.lblNomeFunc);
             this.Name = "Cadastro";
             this.Text = "Cadastro";
             this.ResumeLayout(false);
@@ -155,16 +179,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblNomeFunc;
+        private System.Windows.Forms.TextBox txbNomeFunc;
+        private System.Windows.Forms.TextBox txbLoginFunc;
+        private System.Windows.Forms.Label lbLoginFunc;
+        private System.Windows.Forms.TextBox txbTelFunc;
+        private System.Windows.Forms.Label lblTelefoneFunc;
+        private System.Windows.Forms.TextBox txbEmailFunc;
+        private System.Windows.Forms.Label lblEmailFunc;
+        private System.Windows.Forms.TextBox txbSenhaFunc;
+        private System.Windows.Forms.Label lblSenhaFunc;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnSairFunc;
+        private System.Windows.Forms.ListView listView1;
     }
 }
