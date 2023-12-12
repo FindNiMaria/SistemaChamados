@@ -52,7 +52,25 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadChamado.Designer.cs">
+      <DependentUpon>CadChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
+    <Compile Include="EdtCham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdtCham.Designer.cs">
+      <DependentUpon>EdtCham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExcChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcChamado.Designer.cs">
+      <DependentUpon>ExcChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +87,15 @@
     </Compile>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadChamado.resx">
+      <DependentUpon>CadChamado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdtCham.resx">
+      <DependentUpon>EdtCham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcChamado.resx">
+      <DependentUpon>ExcChamado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
