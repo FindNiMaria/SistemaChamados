@@ -17,7 +17,7 @@ namespace SistemaChamados
         public Connection()
         {
             //@"Data Source=LAB02-PC12\SQLEXPRESS;Initial Catalog=SIST_CHAMOU;Integrated Security=True"
-            string stringConnection = @"Data Source=" + Environment.MachineName + @"\SQLEXPRESS;Initial Catalog=" + Database + ";Integrated Security = true";
+            string stringConnection = @"Data Source=" + Environment.MachineName + ";Initial Catalog=" + Database + ";Integrated Security=true";
 
             con = new SqlConnection(stringConnection);
             

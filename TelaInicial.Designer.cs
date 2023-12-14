@@ -41,6 +41,9 @@
             this.tECNICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mINHASATRIBUIÇÕESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eSCALARCHAMADOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rELATORIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rELATORIODEUSERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rELATORIODECHAMADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,6 +51,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxbNomeUser = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,7 +67,6 @@
             this.Solicitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GrauPrio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DataAber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TxbNomeUser = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,16 +75,17 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Navy;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cADASTROToolStripMenuItem,
             this.cHAMADOToolStripMenuItem,
             this.gESTORToolStripMenuItem,
-            this.tECNICOToolStripMenuItem});
+            this.tECNICOToolStripMenuItem,
+            this.rELATORIOSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(130, 622);
+            this.menuStrip1.Size = new System.Drawing.Size(158, 622);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -92,13 +96,13 @@
             this.uSUÁRIOToolStripMenuItem});
             this.cADASTROToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
-            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(117, 27);
+            this.cADASTROToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.cADASTROToolStripMenuItem.Text = "CADASTRO";
             // 
             // uSUÁRIOToolStripMenuItem
             // 
             this.uSUÁRIOToolStripMenuItem.Name = "uSUÁRIOToolStripMenuItem";
-            this.uSUÁRIOToolStripMenuItem.Size = new System.Drawing.Size(162, 28);
+            this.uSUÁRIOToolStripMenuItem.Size = new System.Drawing.Size(170, 28);
             this.uSUÁRIOToolStripMenuItem.Text = "USUÁRIO";
             this.uSUÁRIOToolStripMenuItem.Click += new System.EventHandler(this.uSUÁRIOToolStripMenuItem_Click);
             // 
@@ -110,27 +114,27 @@
             this.eXCLUIRCHAMADOToolStripMenuItem});
             this.cHAMADOToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cHAMADOToolStripMenuItem.Name = "cHAMADOToolStripMenuItem";
-            this.cHAMADOToolStripMenuItem.Size = new System.Drawing.Size(117, 27);
+            this.cHAMADOToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.cHAMADOToolStripMenuItem.Text = "CHAMADO";
             // 
             // nOVOCHAMADOToolStripMenuItem
             // 
             this.nOVOCHAMADOToolStripMenuItem.Name = "nOVOCHAMADOToolStripMenuItem";
-            this.nOVOCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.nOVOCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(277, 28);
             this.nOVOCHAMADOToolStripMenuItem.Text = "NOVO CHAMADO";
             this.nOVOCHAMADOToolStripMenuItem.Click += new System.EventHandler(this.nOVOCHAMADOToolStripMenuItem_Click);
             // 
             // eDITARCHAMADOToolStripMenuItem
             // 
             this.eDITARCHAMADOToolStripMenuItem.Name = "eDITARCHAMADOToolStripMenuItem";
-            this.eDITARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.eDITARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(277, 28);
             this.eDITARCHAMADOToolStripMenuItem.Text = "EDITAR CHAMADO";
             this.eDITARCHAMADOToolStripMenuItem.Click += new System.EventHandler(this.eDITARCHAMADOToolStripMenuItem_Click);
             // 
             // eXCLUIRCHAMADOToolStripMenuItem
             // 
             this.eXCLUIRCHAMADOToolStripMenuItem.Name = "eXCLUIRCHAMADOToolStripMenuItem";
-            this.eXCLUIRCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(262, 28);
+            this.eXCLUIRCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(277, 28);
             this.eXCLUIRCHAMADOToolStripMenuItem.Text = "EXCLUIR CHAMADO";
             this.eXCLUIRCHAMADOToolStripMenuItem.Click += new System.EventHandler(this.eXCLUIRCHAMADOToolStripMenuItem_Click);
             // 
@@ -141,19 +145,19 @@
             this.aTRIBUIRCHAMADOToolStripMenuItem});
             this.gESTORToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.gESTORToolStripMenuItem.Name = "gESTORToolStripMenuItem";
-            this.gESTORToolStripMenuItem.Size = new System.Drawing.Size(117, 27);
+            this.gESTORToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.gESTORToolStripMenuItem.Text = "GESTOR";
             // 
             // aPROVARCHAMADOToolStripMenuItem
             // 
             this.aPROVARCHAMADOToolStripMenuItem.Name = "aPROVARCHAMADOToolStripMenuItem";
-            this.aPROVARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(277, 28);
+            this.aPROVARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(289, 28);
             this.aPROVARCHAMADOToolStripMenuItem.Text = "APROVAR CHAMADO";
             // 
             // aTRIBUIRCHAMADOToolStripMenuItem
             // 
             this.aTRIBUIRCHAMADOToolStripMenuItem.Name = "aTRIBUIRCHAMADOToolStripMenuItem";
-            this.aTRIBUIRCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(277, 28);
+            this.aTRIBUIRCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(289, 28);
             this.aTRIBUIRCHAMADOToolStripMenuItem.Text = "ATRIBUIR CHAMADO";
             // 
             // tECNICOToolStripMenuItem
@@ -163,20 +167,44 @@
             this.eSCALARCHAMADOToolStripMenuItem});
             this.tECNICOToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.tECNICOToolStripMenuItem.Name = "tECNICOToolStripMenuItem";
-            this.tECNICOToolStripMenuItem.Size = new System.Drawing.Size(117, 27);
+            this.tECNICOToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.tECNICOToolStripMenuItem.Text = "TECNICO";
             // 
             // mINHASATRIBUIÇÕESToolStripMenuItem
             // 
             this.mINHASATRIBUIÇÕESToolStripMenuItem.Name = "mINHASATRIBUIÇÕESToolStripMenuItem";
-            this.mINHASATRIBUIÇÕESToolStripMenuItem.Size = new System.Drawing.Size(276, 28);
+            this.mINHASATRIBUIÇÕESToolStripMenuItem.Size = new System.Drawing.Size(300, 28);
             this.mINHASATRIBUIÇÕESToolStripMenuItem.Text = "MINHAS ATRIBUIÇÕES";
             // 
             // eSCALARCHAMADOToolStripMenuItem
             // 
             this.eSCALARCHAMADOToolStripMenuItem.Name = "eSCALARCHAMADOToolStripMenuItem";
-            this.eSCALARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(276, 28);
+            this.eSCALARCHAMADOToolStripMenuItem.Size = new System.Drawing.Size(300, 28);
             this.eSCALARCHAMADOToolStripMenuItem.Text = "ESCALAR CHAMADO";
+            // 
+            // rELATORIOSToolStripMenuItem
+            // 
+            this.rELATORIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rELATORIODEUSERSToolStripMenuItem,
+            this.rELATORIODECHAMADOSToolStripMenuItem});
+            this.rELATORIOSToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.rELATORIOSToolStripMenuItem.Name = "rELATORIOSToolStripMenuItem";
+            this.rELATORIOSToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
+            this.rELATORIOSToolStripMenuItem.Text = "RELATORIOS";
+            this.rELATORIOSToolStripMenuItem.Click += new System.EventHandler(this.rELATORIOSToolStripMenuItem_Click);
+            // 
+            // rELATORIODEUSERSToolStripMenuItem
+            // 
+            this.rELATORIODEUSERSToolStripMenuItem.Name = "rELATORIODEUSERSToolStripMenuItem";
+            this.rELATORIODEUSERSToolStripMenuItem.Size = new System.Drawing.Size(354, 28);
+            this.rELATORIODEUSERSToolStripMenuItem.Text = "RELATORIO DE USERS";
+            this.rELATORIODEUSERSToolStripMenuItem.Click += new System.EventHandler(this.rELATORIODEUSERSToolStripMenuItem_Click);
+            // 
+            // rELATORIODECHAMADOSToolStripMenuItem
+            // 
+            this.rELATORIODECHAMADOSToolStripMenuItem.Name = "rELATORIODECHAMADOSToolStripMenuItem";
+            this.rELATORIODECHAMADOSToolStripMenuItem.Size = new System.Drawing.Size(354, 28);
+            this.rELATORIODECHAMADOSToolStripMenuItem.Text = "RELATORIO DE CHAMADOS";
             // 
             // listView1
             // 
@@ -227,6 +255,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(912, 77);
             this.panel1.TabIndex = 2;
+            // 
+            // TxbNomeUser
+            // 
+            this.TxbNomeUser.Location = new System.Drawing.Point(227, 31);
+            this.TxbNomeUser.Name = "TxbNomeUser";
+            this.TxbNomeUser.Size = new System.Drawing.Size(100, 20);
+            this.TxbNomeUser.TabIndex = 7;
             // 
             // button1
             // 
@@ -288,13 +323,14 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Script MT Bold", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(133, 9);
+            this.label4.Location = new System.Drawing.Point(161, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 44);
+            this.label4.Size = new System.Drawing.Size(257, 42);
             this.label4.TabIndex = 3;
             this.label4.Text = "Home Screen";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -327,9 +363,9 @@
             this.DataAber});
             this.LvlAbertos.GridLines = true;
             this.LvlAbertos.HideSelection = false;
-            this.LvlAbertos.Location = new System.Drawing.Point(133, 156);
+            this.LvlAbertos.Location = new System.Drawing.Point(161, 150);
             this.LvlAbertos.Name = "LvlAbertos";
-            this.LvlAbertos.Size = new System.Drawing.Size(908, 440);
+            this.LvlAbertos.Size = new System.Drawing.Size(880, 440);
             this.LvlAbertos.TabIndex = 6;
             this.LvlAbertos.UseCompatibleStateImageBehavior = false;
             this.LvlAbertos.View = System.Windows.Forms.View.Details;
@@ -349,6 +385,7 @@
             // 
             this.Solicitante.DisplayIndex = 1;
             this.Solicitante.Text = "Solicitante";
+            this.Solicitante.Width = 25;
             // 
             // GrauPrio
             // 
@@ -360,26 +397,19 @@
             this.DataAber.DisplayIndex = 3;
             this.DataAber.Text = "Data da Abertura";
             // 
-            // TxbNomeUser
-            // 
-            this.TxbNomeUser.Location = new System.Drawing.Point(227, 31);
-            this.TxbNomeUser.Name = "TxbNomeUser";
-            this.TxbNomeUser.Size = new System.Drawing.Size(100, 20);
-            this.TxbNomeUser.TabIndex = 7;
-            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1053, 622);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.LvlAbertos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaInicial";
@@ -431,5 +461,8 @@
         private System.Windows.Forms.ColumnHeader GrauPrio;
         private System.Windows.Forms.ColumnHeader DataAber;
         private System.Windows.Forms.TextBox TxbNomeUser;
+        private System.Windows.Forms.ToolStripMenuItem rELATORIOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rELATORIODEUSERSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rELATORIODECHAMADOSToolStripMenuItem;
     }
 }

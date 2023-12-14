@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,7 @@ namespace SistemaChamados
             InitializeComponent();
              LtvList.MouseDoubleClick += LtvList_MouseDoubleClick;
         }
+
         public void AttListView()
         {
             LtvList.Items.Clear();
@@ -67,9 +70,72 @@ namespace SistemaChamados
                 connection.CloseConnection();
             }
         }
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+        private bool ValidaCampos(string telefone, string email)
+        {
+            if (string.IsNullOrEmpty(txbLoginFunc.Text) ||
+                string.IsNullOrEmpty(txbNomeFunc.Text) ||
+                string.IsNullOrEmpty(telefone) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(txbSenhaFunc.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos antes de cadastrar.");
+                return false; 
+            }
 
+            
+            string senha = txbSenhaFunc.Text;
+            if (!(senha.Any(char.IsLetter) && senha.Any(char.IsDigit)))
+            {
+                MessageBox.Show("A senha deve conter pelo menos uma letra e um número.");
+                return false; 
+            }
+
+            
+            if (telefone.Length < 11)
+            {
+                MessageBox.Show("O número de telefone deve ter pelo menos 11 dígitos.");
+                return false; 
+            }
+
+            
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Por favor, insira um endereço de e-mail válido.");
+                return false; 
+            }
+
+            return true; 
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+
+            if (!ValidaCampos(txbTelFunc.Text, txbEmailFunc.Text))
+            {
+                return; // Exit the method if fields are not valid
+            }
+            string senhaHash = HashPassword(txbSenhaFunc.Text);
+            
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
@@ -82,7 +148,7 @@ namespace SistemaChamados
             sqlCommand.Parameters.AddWithValue("@nome", txbNomeFunc.Text);
             sqlCommand.Parameters.AddWithValue("@telefone", txbTelFunc.Text);
             sqlCommand.Parameters.AddWithValue("@email", txbEmailFunc.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", txbSenhaFunc.Text);
+            sqlCommand.Parameters.AddWithValue("@senha", senhaHash);
             try
             {
 
@@ -101,6 +167,7 @@ namespace SistemaChamados
 
 
             }
+        
         }
 
         private void btnSairFunc_Click(object sender, EventArgs e)

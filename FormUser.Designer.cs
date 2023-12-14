@@ -59,10 +59,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Chamou";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -93,6 +93,7 @@
             this.txbsenha.ForeColor = System.Drawing.Color.Silver;
             this.txbsenha.Location = new System.Drawing.Point(49, 329);
             this.txbsenha.Name = "txbsenha";
+            this.txbsenha.PasswordChar = '*';
             this.txbsenha.Size = new System.Drawing.Size(328, 13);
             this.txbsenha.TabIndex = 6;
             // 

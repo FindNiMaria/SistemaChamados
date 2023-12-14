@@ -34,16 +34,29 @@
             this.txbDesCham = new System.Windows.Forms.TextBox();
             this.lblNomeFunc = new System.Windows.Forms.Label();
             this.BtnEditar = new System.Windows.Forms.Button();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Descricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prioridade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DataAbert = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Usuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // LvEdtCham
             // 
+            this.LvEdtCham.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Descricao,
+            this.Prioridade,
+            this.DataAbert,
+            this.Usuario});
+            this.LvEdtCham.FullRowSelect = true;
             this.LvEdtCham.HideSelection = false;
             this.LvEdtCham.Location = new System.Drawing.Point(12, 12);
             this.LvEdtCham.Name = "LvEdtCham";
             this.LvEdtCham.Size = new System.Drawing.Size(776, 247);
             this.LvEdtCham.TabIndex = 0;
             this.LvEdtCham.UseCompatibleStateImageBehavior = false;
+            this.LvEdtCham.View = System.Windows.Forms.View.Details;
             this.LvEdtCham.SelectedIndexChanged += new System.EventHandler(this.lvEdtCham_SelectedIndexChanged);
             // 
             // CbxPrioridade
@@ -95,6 +108,26 @@
             this.BtnEditar.UseVisualStyleBackColor = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Descricao
+            // 
+            this.Descricao.Text = "Descrição";
+            // 
+            // Prioridade
+            // 
+            this.Prioridade.Text = "Prioridade";
+            // 
+            // DataAbert
+            // 
+            this.DataAbert.Text = "Data de Abertura";
+            // 
+            // Usuario
+            // 
+            this.Usuario.Text = "Usuario";
+            // 
             // EdtCham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +154,10 @@
         private System.Windows.Forms.TextBox txbDesCham;
         private System.Windows.Forms.Label lblNomeFunc;
         private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Descricao;
+        private System.Windows.Forms.ColumnHeader Prioridade;
+        private System.Windows.Forms.ColumnHeader DataAbert;
+        private System.Windows.Forms.ColumnHeader Usuario;
     }
 }

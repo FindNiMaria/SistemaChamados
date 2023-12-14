@@ -119,6 +119,7 @@
             // 
             this.txbSenhaFunc.Location = new System.Drawing.Point(71, 163);
             this.txbSenhaFunc.Name = "txbSenhaFunc";
+            this.txbSenhaFunc.PasswordChar = '*';
             this.txbSenhaFunc.Size = new System.Drawing.Size(100, 20);
             this.txbSenhaFunc.TabIndex = 9;
             // 

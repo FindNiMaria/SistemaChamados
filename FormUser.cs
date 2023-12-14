@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,14 @@ namespace SistemaChamados
             
 
         }
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
         private bool AutUser(string usuario, string senha)
         {
             Connection connection = new Connection();
@@ -64,7 +73,7 @@ namespace SistemaChamados
             sqlCommand.CommandText = "SELECT * FROM funcionario WHERE login_funcionario = @Usuario AND senha_funcionario = @Senha";
 
             sqlCommand.Parameters.AddWithValue("@Usuario", usuario);
-            sqlCommand.Parameters.AddWithValue("@Senha", senha);
+            sqlCommand.Parameters.AddWithValue("@Senha",HashPassword(senha));
                 
                 try
                     {

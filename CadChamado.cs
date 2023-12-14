@@ -31,9 +31,22 @@ namespace SistemaChamados
             this.Close();
             
         }
-
+        private bool ValidaCampos()
+        {
+            if (string.IsNullOrEmpty(txbDesCham.Text) || string.IsNullOrEmpty(CbxPrioridade.Text))
+                {
+                MessageBox.Show("Por Favor preencha todos os campos.");
+                return false;
+            }
+            return true;
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            if(!ValidaCampos())
+            {
+                return;
+            }
+
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 

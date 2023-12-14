@@ -30,16 +30,29 @@
         {
             this.LvExcCham = new System.Windows.Forms.ListView();
             this.BtnExcCham = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // LvExcCham
             // 
+            this.LvExcCham.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.LvExcCham.FullRowSelect = true;
             this.LvExcCham.HideSelection = false;
             this.LvExcCham.Location = new System.Drawing.Point(12, 12);
             this.LvExcCham.Name = "LvExcCham";
             this.LvExcCham.Size = new System.Drawing.Size(776, 259);
             this.LvExcCham.TabIndex = 0;
             this.LvExcCham.UseCompatibleStateImageBehavior = false;
+            this.LvExcCham.View = System.Windows.Forms.View.Details;
             this.LvExcCham.SelectedIndexChanged += new System.EventHandler(this.LvExcCham_SelectedIndexChanged);
             // 
             // BtnExcCham
@@ -51,6 +64,26 @@
             this.BtnExcCham.Text = "Excluir";
             this.BtnExcCham.UseVisualStyleBackColor = true;
             this.BtnExcCham.Click += new System.EventHandler(this.BtnExcCham_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Descrição";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Prioridade";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Data de Abertura";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Usuario de abertura";
             // 
             // ExcChamado
             // 
@@ -69,5 +102,10 @@
 
         private System.Windows.Forms.ListView LvExcCham;
         private System.Windows.Forms.Button BtnExcCham;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

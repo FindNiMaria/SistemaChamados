@@ -35,23 +35,21 @@ namespace SistemaChamados
 
                 while (dr.Read())
                 {
-
+                    int id = (int)dr["id_chamado"];
                     string descricao = (string)dr["descricao_chamado"];
                     string usuario = (string)dr["usuario_chamado"];
                     string prioridade = (string)dr["prioridade_chamado"];
-                    string data = (string)dr["data_chamado"];
-                    int id = (int)dr["id_chamado"];
-
-
+                    DateTime data;
+                    DateTime.TryParse(dr["data_chamado"].ToString(), out data);
+                    
 
 
                     ListViewItem lv = new ListViewItem(id.ToString());
                     LvExcCham.Items.Add(lv);
-
                     lv.SubItems.Add(descricao);
                     lv.SubItems.Add(usuario);
                     lv.SubItems.Add(prioridade);
-                    lv.SubItems.Add(data);
+                    lv.SubItems.Add(data.ToString());
 
 
                 }
