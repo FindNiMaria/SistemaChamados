@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using System.IO;
+using System.Drawing.Printing;
 
 
 namespace SistemaChamados
@@ -182,63 +183,76 @@ namespace SistemaChamados
 
         private void rELATORIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
-        public void GerarRelatorio()
+        private void DesenharRelatorio(object sender, PrintPageEventArgs e)
         {
+            Graphics g = e.Graphics;
+            Font fonte = new Font("Arial", 12);
+            float linhaAtual = 20;
+            DataTable dados = null;
+
+            Connection connection = new Connection();
+            connection.OpenConnection();
+            string query = "SELECT * FROM funcionario";
+
+            
+            dados = ExecuteQueryAndGetDataTable(query);
+
+            if (dados != null && dados.Rows.Count > 0)
             {
-                try
+                foreach (DataRow row in dados.Rows)
                 {
-                    // Conexão com o banco de dados
-                    Connection connection = new Connection();
-                    connection.OpenConnection();
+                    g.DrawString($"Nome: {row["nome_funcionario"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                    linhaAtual += 20;
 
-                    // Query SQL para obter dados do banco de dados
-                    string query = "SELECT * FROM funcionario";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection.ReturnConnection());
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
+                    g.DrawString($"UserName: {row["login_funcionario"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                    linhaAtual += 20;
 
-                    // Configurar o ReportViewer
-                    ReportViewer reportViewer = new ReportViewer();
-                    reportViewer.ProcessingMode = ProcessingMode.Local;
-                    reportViewer.LocalReport.ReportPath = "C:/Users/nicol/Downloads/SistemaChamados-20231213T224619Z-001/SistemaChamados/RelatorioUser.rdlc";
+                    g.DrawString($"Email: {row["email_funcionario"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                    linhaAtual += 20;
 
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        reportViewer.LocalReport.DataSources.Clear();
-                        ReportDataSource source = new ReportDataSource("SIST_CHAMOUDataSet1", dataTable);
-                        reportViewer.LocalReport.DataSources.Add(source);
-
-                        // Refresh the ReportViewer
-                        reportViewer.RefreshReport();
-
-                        // Render and save the report as PDF
-                        using (FileStream file = new FileStream("C:/Users/nicol/Downloads/ReportViewer.pdf", FileMode.Create))
-                        {
-
-                            byte[] pdfBytes = reportViewer.LocalReport.Render("PDF", null, out string mimeType, out string encoding, out string extension, out string[] streams, out Warning[] warnings);
-
-                            file.Write(pdfBytes, 0, pdfBytes.Length);
-                        }
-
-                        Console.WriteLine("Relatório gerado com sucesso!");
-
-
-                        connection.CloseConnection();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Erro ao gerar relatório: {ex.Message}");
+                    g.DrawString($"telefone: {row["telefone_funcionario"]}", fonte, Brushes.Black, new PointF(100, linhaAtual));
+                    linhaAtual += 20;
                 }
             }
+            else
+            {
+                MessageBox.Show(
+                    "Nenhum dado encontrado na tabela funcionario", "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+
+            connection.CloseConnection(); 
         }
-    
+
+        private DataTable ExecuteQueryAndGetDataTable(string query)
+        {
+            
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection("Data Source=NICOLE-PC;Initial Catalog=SIST_CHAMOU;Integrated Security=True;Encrypt=False"))
+            {
+                connection.Open();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    adapter.Fill(dataTable);
+                }
+            }
+
+            return dataTable;
+        }
 
         private void rELATORIODEUSERSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GerarRelatorio();
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(this.DesenharRelatorio);
+
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = pd;
+            previewDialog.ShowDialog();
         }
     }
 }

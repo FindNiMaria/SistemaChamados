@@ -132,7 +132,7 @@ namespace SistemaChamados
 
             if (!ValidaCampos(txbTelFunc.Text, txbEmailFunc.Text))
             {
-                return; // Exit the method if fields are not valid
+                return; 
             }
             string senhaHash = HashPassword(txbSenhaFunc.Text);
             
